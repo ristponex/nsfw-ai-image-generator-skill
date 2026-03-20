@@ -26,11 +26,12 @@ API_BASE = "https://api.atlascloud.ai/api/v1/model"
 
 # 热门 NSFW 图像模型（仅作参考，实际可传入任意模型 ID）
 POPULAR_MODELS = {
-    "flux-pro": "black-forest-labs/flux-2-pro",
-    "flux-schnell": "black-forest-labs/flux-1.1-schnell",
-    "ideogram": "ideogram-ai/ideogram-v3",
-    "imagen": "google/imagen-4-ultra",
-    "seedream": "bytedance/seedream-v5.0",
+    "nano-banana": "google/nano-banana-2/text-to-image",
+    "seedream": "bytedance/seedream-v5.0-lite",
+    "seedream-v4.5": "bytedance/seedream-v4.5",
+    "qwen-image": "alibaba/qwen-image/text-to-image-max",
+    "z-image": "z-image/turbo",
+    "wan-image": "alibaba/wan-2.6/text-to-image",
 }
 
 
@@ -213,7 +214,7 @@ def main():
 
     p = sub.add_parser("generate", help="Generate an image")
     p.add_argument("prompt", help="Text prompt")
-    p.add_argument("--model", default="flux-pro", help="Model ID or shortcut (default: flux-pro)")
+    p.add_argument("--model", default="nano-banana", help="Model ID or shortcut (default: nano-banana)")
     p.add_argument("--size", help="Image size (e.g. 1024x1024)")
     p.add_argument("--aspect-ratio", help="Aspect ratio (e.g. 1:1, 16:9)")
     p.add_argument("--count", type=int, help="Number of images")
